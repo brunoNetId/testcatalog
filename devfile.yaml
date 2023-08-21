@@ -55,33 +55,7 @@ components:
         - name: m2
           path: /home/user/.m2
 
-  - name: webapp
-    container:
-      image: quay.io/redhatintegration/tutorial-web-app:latest
-      env:
-        - name: NODE_ENV
-          value: production
-        - name: THREESCALE_WILDCARD_DOMAIN
-          value: local.localdomain
-        - name: OPENSHIFT_VERSION
-          value: '4'
-        - name: WALKTHROUGH_LOCATIONS
-          value: >-
-            https://github.com/brunoNetId/testche?walkthroughsFolder=/docs/labs#test1
-      endpoints:
-        - name: tutorial
-          exposure: public
-          targetPort: 5001
-          protocol: https
-          secure: true
-      memoryLimit: 512Mi
-      mountSources: true
-      volumeMounts:
-        - name: tutorial-storage
-          path: /opt/user-walkthroughs
-
-
-  - name: webapp-catalog
+  - name: webapp-all
     container:
       image: quay.io/redhatintegration/tutorial-web-app:latest
       env:
@@ -92,17 +66,70 @@ components:
         - name: OPENSHIFT_VERSION
           value: '4'
         - name: PORT
-          value: '6001'
-        - name: CUSTOM_BRUNO
-          value: 'temp'
+          value: '5001'
         - name: WALKTHROUGH_LOCATIONS
           value: >-
             https://github.com/brunoNetId/testche?walkthroughsFolder=/docs/catalog&walkthroughsFolder=/docs/labs,https://github.com/RedHat-Middleware-Workshops/workshop-camel3?walkthroughsFolder=/docs/labs
       endpoints:
         - name: catalog
           exposure: public
-          targetPort: 6001
-          protocol: http
+          targetPort: 5001
+          protocol: https
+          secure: true
+      memoryLimit: 512Mi
+      mountSources: true
+      volumeMounts:
+        - name: tutorial-storage
+          path: /opt/user-walkthroughs
+
+  - name: webapp-testche
+    container:
+      image: quay.io/redhatintegration/tutorial-web-app:latest
+      env:
+        - name: NODE_ENV
+          value: production
+        - name: THREESCALE_WILDCARD_DOMAIN
+          value: local.localdomain
+        - name: OPENSHIFT_VERSION
+          value: '4'
+        - name: PORT
+          value: '5002'
+        - name: WALKTHROUGH_LOCATIONS
+          value: >-
+            https://github.com/brunoNetId/testche?walkthroughsFolder=/docs/labs#test1
+      endpoints:
+        - name: tutorial
+          exposure: public
+          targetPort: 5002
+          protocol: https
+          secure: true
+      memoryLimit: 512Mi
+      mountSources: true
+      volumeMounts:
+        - name: tutorial-storage
+          path: /opt/user-walkthroughs
+
+
+  - name: webapp-camel-workshop
+    container:
+      image: quay.io/redhatintegration/tutorial-web-app:latest
+      env:
+        - name: NODE_ENV
+          value: production
+        - name: THREESCALE_WILDCARD_DOMAIN
+          value: local.localdomain
+        - name: OPENSHIFT_VERSION
+          value: '4'
+        - name: PORT
+          value: '5003'
+        - name: WALKTHROUGH_LOCATIONS
+          value: >-
+            https://github.com/RedHat-Middleware-Workshops/workshop-camel3?walkthroughsFolder=/docs/labs
+      endpoints:
+        - name: catalog
+          exposure: public
+          targetPort: 5003
+          protocol: https
           secure: true
       memoryLimit: 512Mi
       mountSources: true
