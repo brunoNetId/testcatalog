@@ -1,6 +1,19 @@
 schemaVersion: 2.1.0
 metadata:
   name: devsandbox-camel-catalog
+
+projects:
+- name: testche
+  source:
+    type: git
+    location: https://github.com/brunoNetId/testche.git
+    branch: master
+- name: camel-workshop
+  source:
+    type: git
+    location: https://github.com/RedHat-Middleware-Workshops/workshop-camel3.git
+    branch: master
+
 components:
 #   - name: tools
 #     container:
