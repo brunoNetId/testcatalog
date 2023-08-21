@@ -3,16 +3,15 @@ metadata:
   name: devsandbox-camel-catalog
 
 projects:
+
 - name: testche
-  source:
-    type: git
-    location: https://github.com/brunoNetId/testche.git
-    branch: master
+  git:
+    remotes:
+      origin: https://github.com/brunoNetId/testche.git
 - name: camel-workshop
-  source:
-    type: git
-    location: https://github.com/RedHat-Middleware-Workshops/workshop-camel3.git
-    branch: master
+  git:
+    remotes:
+      origin: https://github.com/RedHat-Middleware-Workshops/workshop-camel3.git
 
 components:
 #   - name: tools
