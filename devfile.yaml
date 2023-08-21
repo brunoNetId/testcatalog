@@ -71,7 +71,7 @@ components:
           value: >-
             https://github.com/brunoNetId/testche?walkthroughsFolder=/docs/catalog&walkthroughsFolder=/docs/labs,https://github.com/RedHat-Middleware-Workshops/workshop-camel3?walkthroughsFolder=/docs/labs
       endpoints:
-        - name: catalog
+        - name: all
           exposure: public
           targetPort: 5001
           protocol: https
@@ -98,7 +98,7 @@ components:
           value: >-
             https://github.com/brunoNetId/testche?walkthroughsFolder=/docs/labs#test1
       endpoints:
-        - name: tutorial
+        - name: testche
           exposure: public
           targetPort: 5002
           protocol: https
@@ -126,7 +126,7 @@ components:
           value: >-
             https://github.com/RedHat-Middleware-Workshops/workshop-camel3?walkthroughsFolder=/docs/labs
       endpoints:
-        - name: catalog
+        - name: camel-workshop
           exposure: public
           targetPort: 5003
           protocol: https
