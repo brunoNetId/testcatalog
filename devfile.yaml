@@ -90,7 +90,7 @@ components:
         - name: MAVEN_OPTS
           value: $(JAVA_OPTS)
         - name: VSCODE_DEFAULT_WORKSPACE
-          value: "/projects/catalog/che-demo.code-workspace"
+          value: "/projects/catalog/config.code-workspace"
       endpoints:
         - exposure: public
           name: 8080-tcp
