@@ -21,6 +21,11 @@ projects:
     remotes:
       origin: https://github.com/RedHat-Middleware-Workshops/workshop-camel3.git
 
+- name: sandbox-camel
+  git:
+    remotes:
+      origin: https://github.com/RedHat-Middleware-Workshops/devsandbox-camel.git
+
 components:
 #   - name: tools
 #     container:
@@ -109,7 +114,9 @@ components:
           value: '5001'
         - name: WALKTHROUGH_LOCATIONS
           value: >-
-            https://github.com/brunoNetId/testche?walkthroughsFolder=/docs/catalog&walkthroughsFolder=/docs/labs,https://github.com/RedHat-Middleware-Workshops/workshop-camel3?walkthroughsFolder=/docs/labs
+            https://github.com/brunoNetId/testche?walkthroughsFolder=/docs/catalog&walkthroughsFolder=/docs/labs,
+            https://github.com/RedHat-Middleware-Workshops/workshop-camel3?walkthroughsFolder=/docs/labs,
+            https://github.com/RedHat-Middleware-Workshops/devsandbox-camel?walkthroughsFolder=/docs/labs
       endpoints:
         - name: all
           exposure: public

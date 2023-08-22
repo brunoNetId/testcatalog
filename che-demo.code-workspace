@@ -5,6 +5,9 @@
 		},
 		{
 			"path": "../camel-workshop"
+		},
+		{
+			"path": "../sandbox-camel"
 		}
 	]
 }
