@@ -179,7 +179,11 @@ components:
 
   - name: m2
     volume:
-      size: 1G
+      size: 2Gi
+
+  - volume:
+      size: 2Gi
+    name: npm
 
   - name: tutorial-storage
     volume:
