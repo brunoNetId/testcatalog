@@ -40,35 +40,35 @@ components:
 #           path: /home/user/.m2
 
 
-  - name: dev-tools
-    container: 
-      image: quay.io/cgruver0/che/che-demo-app:latest
-      memoryRequest: 1Gi
-      memoryLimit: 6Gi
-      cpuRequest: 500m
-      cpuLimit: 2000m
-      mountSources: true
-      sourceMapping: /projects
-      env:
-      - name: SHELL
-        value: "/bin/zsh"
-      - name: TESTCONTAINERS_RYUK_DISABLED
-        value: "true"
-      - name: TESTCONTAINERS_CHECKS_DISABLE
-        value: "true"
-      - name: DOCKER_HOST
-        value: "tcp://127.0.0.1:2475"
-      - name: VSCODE_DEFAULT_WORKSPACE
-        value: "/projects/che-demo-app/che-demo.code-workspace"
-      volumeMounts:
-      - name: m2
-        path: /home/user/.m2
-      - name: npm
-        path: /home/user/.npm
-      endpoints:
-        - name: kubedock
-          targetPort: 2475
-          exposure: none
+  # - name: dev-tools
+  #   container: 
+  #     image: quay.io/cgruver0/che/che-demo-app:latest
+  #     memoryRequest: 1Gi
+  #     memoryLimit: 6Gi
+  #     cpuRequest: 500m
+  #     cpuLimit: 2000m
+  #     mountSources: true
+  #     sourceMapping: /projects
+  #     env:
+  #     - name: SHELL
+  #       value: "/bin/zsh"
+  #     - name: TESTCONTAINERS_RYUK_DISABLED
+  #       value: "true"
+  #     - name: TESTCONTAINERS_CHECKS_DISABLE
+  #       value: "true"
+  #     - name: DOCKER_HOST
+  #       value: "tcp://127.0.0.1:2475"
+  #     - name: VSCODE_DEFAULT_WORKSPACE
+  #       value: "/projects/che-demo-app/che-demo.code-workspace"
+  #     volumeMounts:
+  #     - name: m2
+  #       path: /home/user/.m2
+  #     - name: npm
+  #       path: /home/user/.npm
+  #     endpoints:
+  #       - name: kubedock
+  #         targetPort: 2475
+  #         exposure: none
 
   - name: tools
     container:
