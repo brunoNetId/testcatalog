@@ -9,15 +9,11 @@ projects:
     remotes:
       origin: https://github.com/brunoNetId/testcatalog.git
 
-- name: camel-workshop
-  git:
-    remotes:
-      origin: https://github.com/RedHat-Middleware-Workshops/workshop-camel3.git
-
 - name: testche
   git:
     remotes:
       origin: https://github.com/brunoNetId/testche.git
+      
 - name: camel-workshop
   git:
     remotes:
